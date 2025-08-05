@@ -23,69 +23,76 @@ $font-family_1: 'Arial', sans-serif;
   justify-content: space-between;
   z-index: 1000;
   transition: transform 0.3s ease;
-}
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 30px;
-
-  a {
-    text-decoration: none;
-    color: $color_1;
-    font-weight: 500;
-    position: relative;
-  }
-
-  a.active {
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      height: 2px;
-      width: 100%;
-      background: black;
+  .logo {
+    img {
+      width: 150px;
     }
   }
 
-  a.buy {
-    font-weight: bold;
+  .nav-links {
+    display: flex;
+    gap: 30px;
+
+    a {
+      text-decoration: none;
+      color: $color_1;
+      font-weight: 500;
+      position: relative;
+    }
+
+    a.active {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: black;
+      }
+    }
+
+    a.buy {
+      font-weight: bold;
+    }
   }
+
+
+  .login-signup-btn {
+    background-color: #0284c7;
+    color: #fff;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 999px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #339fc2;
+    }
+  }
+
 }
 
-.header-icons {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
+.login-modal {
+  .modal-dialog {
+    .modal-content {
+      .modal-body {
+        .error-text {
+          color: red;
+          font-size: 13px;
+          margin-top: 5px;
+          text-align: left;
+          padding-left: 10px;
+        }
 
-.icon-btn {
-  background: none;
-  border: none;
-  font-size: 18px;
-  position: relative;
-  cursor: pointer;
-}
-
-.icon-btn.cart {
-  position: relative;
-}
-
-.badge {
-  position: absolute;
-  top: -4px;
-  right: -2px;
-  background: orange;
-  color: $color_2 !important;
-  font-size: 10px !important;
-  padding: 4px 6px !important;
-  border-radius: 50% !important;
+      }
+    }
+  }
 }
 
 .main-header.hide {

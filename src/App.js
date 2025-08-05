@@ -6,14 +6,18 @@ import Header from "./Component/Header";
 import Footer from "./Component/Footer";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
+import Login from "./Pages/Login";
 import "./scss/style.scss";
 import "bootstrap/dist/css/bootstrap.css";
+import '@coreui/coreui-pro/dist/css/coreui.min.css';
+ 
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         {/* <Route path="/contact" element={<Contact />} /> */}

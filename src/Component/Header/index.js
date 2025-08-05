@@ -1,14 +1,60 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 // import searchicon from "../../ulits/assets/search-icon.svg";
-
-
+import headerLogo from "../../ulits/assets/header-logo.png";
+import Modal from "react-bootstrap/Modal";
 
 function Header() {
     const [showHeader, setShowHeader] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const location = useLocation();
-    const [showInput, setShowInput] = useState(false);
+    // const [showModal, setShowModal] = useState(false);
+    // const [showPassword, setShowPassword] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState({});
+    // const [showInput, setShowInput] = useState(false);
+
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+
+    //     const newErrors = {};
+
+    //     // Basic email validation
+    //     if (!email) {
+    //         newErrors.email = "Email is required";
+    //     } else if (!/\S+@\S+\.\S+/.test(email)) {
+    //         newErrors.email = "Enter a valid email";
+    //     }
+
+    //     // Basic password validation
+    //     if (!password) {
+    //         newErrors.password = "Password is required";
+    //     } else if (password.length < 6) {
+    //         newErrors.password = "Minimum 6 characters";
+    //     }
+
+    //     setErrors(newErrors);
+
+    //     if (Object.keys(newErrors).length === 0) {
+    //         // Proceed with login logic (e.g. API call)
+    //         console.log("Form Submitted");
+    //     }
+    // };
+
+    const handleSubmit = (e) => {
+        e.preventDefault(); // stop default form behavior
+        console.log('Email:', email);
+        console.log('Password:', password);
+
+        // here you can send data to backend using fetch/axios
+    };
 
 
     useEffect(() => {
@@ -28,7 +74,6 @@ function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [lastScrollY]);
 
-
     const menuItems = [
         { path: "/", label: "Home" },
         { path: "/about", label: "About" },
@@ -38,77 +83,88 @@ function Header() {
         { path: "/buy", label: "Buy Theme!" },
     ];
 
-
-
     return (
-        <header className={`main-header ${showHeader ? "show" : "hide"}`}>
-            <div className="logo">VA–RA</div>
-
-            <nav className="nav-links">
-                {menuItems.map((item, index) => (
-                    <Link
-                        key={index}
-                        to={item.path}
-                        className={location.pathname === item.path ? "active" : ""}
-                    >
-                        {item.label}
-                    </Link>
-                ))}
-            </nav>
-
-            <div className="header-icons">
-                <div style={{ position: "relative", display: "inline-block" }}>
-                    <button onClick={() => setShowInput(!showInput)} id="search-icon"><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="feather feather-search"
-                    >
-                        <circle cx="11" cy="11" r="8" />
-                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                    </svg></button>
-
-                    {showInput && (
-                        <input
-                            type="text"
-                            placeholder="Search..."
-                            style={{
-                                position: "relative",
-                                top: "0px",
-                                left: 0,
-                                padding: "8px",
-                                border: "1px solid #ccc",
-                                borderRadius: "4px",
-                                width: "200px"
-                            }}
-                        />
-                    )}
+        <>
+            <header className={`main-header ${showHeader ? "show" : "hide"}`}>
+                <div className="logo">
+                    <img src={headerLogo} alt="Logo" />
                 </div>
-                <button className="icon-btn cart">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="28"
-                        height="28"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="feather feather-shopping-cart"
-                    >
-                        <circle cx="9" cy="21" r="1" />
-                        <circle cx="20" cy="21" r="1" />
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                    </svg><span className="badge">0</span>
+
+                <nav className="nav-links">
+                    {menuItems.map((item, index) => (
+                        <Link
+                            key={index}
+                            to={item.path}
+                            className={location.pathname === item.path ? "active" : ""}
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
+                </nav>
+                <button className="login-signup-btn" onClick={handleShow}>
+                    Log In/Sign Up
                 </button>
-            </div>
-        </header>
+            </header>
+            <Modal show={show} onHide={handleClose} className="login-modal">
+                <Modal.Header closeButton>
+                    <Modal.Title>Log In</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {/* <form className="login-form" onSubmit={handleSubmit}>
+                        <div className="input-group">
+                            <input
+                                type="email"
+                                placeholder="Email Address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            {errors.email && <p className="error-text">{errors.email}</p>}
+                        </div>
+
+                        <div className="input-group password-group">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                placeholder="Password"
+                                required
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <span
+                                className="toggle-password"
+                                onClick={() => setShowPassword((prev) => !prev)}
+                            >
+                                {showPassword ? "🙈" : "👁️"}
+                            </span>
+                            {errors.password && <p className="error-text">{errors.password}</p>}
+                        </div>
+
+                        <button type="submit" className="login-btn">Login</button>
+                        <button type="button" className="signup-btn">Sign Up Now</button>
+                    </form> */}
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="email"
+                            placeholder="Enter Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+
+                        <input
+                            type="password"
+                            placeholder="Enter Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+
+                        <button type="submit">Submit</button>
+                    </form>
+
+                    <p className="forgot-link">Forgot Your password?</p>
+                </Modal.Body>
+            </Modal>
+        </>
     );
 }
 

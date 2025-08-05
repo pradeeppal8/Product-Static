@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "./scss/style.scss";
 import "bootstrap/dist/css/bootstrap.css";
+import '@coreui/coreui-pro/dist/css/coreui.min.css';
+ 
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
