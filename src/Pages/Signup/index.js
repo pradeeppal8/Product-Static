@@ -8,23 +8,13 @@ import { Link } from 'react-router-dom';
 
 
 
-function Login() {
-    // const [tab, setTab] = useState("login");
+function Signup() {
+    const [tab, setTab] = useState("login");
     const [email, setEmail] = useState('');
-    const [error, setError] = useState('');
+    const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState({});
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
-
-    const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!email.trim()) {
-      setError('Email is Required');
-    } else {
-      setError('');
-      navigate('/home'); 
-    }
-  };
-
 
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 1500);
@@ -32,7 +22,20 @@ function Login() {
     }, []);
 
     if (loading) return <CustomLoader loading />;
-   
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const newErrors = {};
+        if (!email.trim()) newErrors.email = 'Email is Required';
+        if (!password.trim()) newErrors.password = 'Password is Required';
+        navigate('/home');
+        setErrors(newErrors);
+
+        if (Object.keys(newErrors).length === 0) {
+            // proceed with login
+            alert('Login success');
+        }
+    };
 
     return (
         <div className="main-wrapper">
@@ -47,10 +50,14 @@ function Login() {
                     </button>
                 </div> */}
 
-
-                {/* <div className="login-container">
-                    <h2>Login your account</h2>
-                    <p>Inter yor valid email address and Password to login your account</p>
+                <div className="login-container">
+                    <div className="form-container">
+                        <h2>Signup Page</h2>
+                        {/* Signup form goes here */}
+                        <p>
+                            Already have an account? <Link to="/login">Log in now!</Link>
+                        </p>
+                    </div>
 
                     <form className="login-form" onSubmit={handleLogin}>
                         <div className={`form-group ${errors.email ? 'has-error' : ''}`}>
@@ -76,33 +83,6 @@ function Login() {
                         </div>
                         <button type="submit">LOGIN</button>
                     </form>
-                </div> */}
-                <div className="login-container">
-
-                    <div className="form-container">
-                        <h2>Login Page</h2>
-                        {/* Login form goes here */}
-                        <p>
-                            Don’t have an account? <Link to="/">Sign up now!</Link>
-                        </p>
-                    </div>
-
-                    <form className="login-form" onSubmit={handleSubmit}>
-                        <div className={`form-group ${error.email ? 'has-error' : ''}`}>
-                            <label>EMAIL</label>
-                            <input
-                                id="email"
-                                type="email"
-                                placeholder="example@domain.com"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            {error.email && <span className="error-text">{error.email}</span>}
-                        </div>
-                        <button type="submit">
-                            LET'S START <span>&rarr;</span>
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -111,4 +91,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default Signup;

@@ -3,20 +3,13 @@ $color_2: white;
 $font-family_1: 'Arial', sans-serif;
 
 .main-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 40px;
-  background: white;
-  border-bottom: 1px solid #eee;
-  font-family: $font-family_1;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 15px 40px;
-  background: white;
-  border-bottom: 1px solid #eee;
+  background: rgb(11 129 124 / 21%);
+  border-bottom: 0px solid #eee;
   font-family: $font-family_1;
   display: flex;
   align-items: center;
@@ -36,7 +29,7 @@ $font-family_1: 'Arial', sans-serif;
 
     a {
       text-decoration: none;
-      color: $color_1;
+      color: #fff;
       font-weight: 500;
       position: relative;
     }
@@ -49,7 +42,7 @@ $font-family_1: 'Arial', sans-serif;
         left: 0;
         height: 2px;
         width: 100%;
-        background: black;
+        background: #ffff;
       }
     }
 
@@ -60,7 +53,7 @@ $font-family_1: 'Arial', sans-serif;
 
 
   .login-signup-btn {
-    background-color: #0284c7;
+    background-color: #1bb5ae;
     color: #fff;
     padding: 12px 28px;
     font-size: 16px;
@@ -72,7 +65,7 @@ $font-family_1: 'Arial', sans-serif;
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: #339fc2;
+      background-color: #95e6e2;
     }
   }
 

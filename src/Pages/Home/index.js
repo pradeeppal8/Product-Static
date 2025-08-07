@@ -22,7 +22,7 @@ function Home() {
     return (
         <>
             <div className="main-wrapper" style={{ paddingTop: "90px" }}>
-                {/* <div className="homepage">
+                <div className="homepage">
                     <div className="title">About Us</div>
                     <nav className="navbar">
                         <input type="text" placeholder="Search products..." />
@@ -84,7 +84,7 @@ function Home() {
                     <footer className="footer">
                         <p>&copy; 2025 POCO. All rights reserved.</p>
                     </footer>
-                </div> */}
+                </div>
                 <div className="datepicker">
                     <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
                 </div>
