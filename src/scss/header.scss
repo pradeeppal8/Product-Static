@@ -17,9 +17,14 @@ $font-family_1: 'Arial', sans-serif;
   z-index: 1000;
   transition: transform 0.3s ease;
 
+  .sidebars {
+    display: none;
+  }
+
   .logo {
     img {
       width: 150px;
+      cursor: pointer;
     }
   }
 
@@ -48,6 +53,24 @@ $font-family_1: 'Arial', sans-serif;
 
     a.buy {
       font-weight: bold;
+    }
+  }
+
+  &.other-header {
+    background-color: #1bb5ae;
+
+    .login-signup-btn {
+      background-color: #fff;
+      color: #1bb5ae;
+      border: 2px solid #fff;
+
+      &:hover {
+        background-color: #1bb5ae;
+        color: #fff;
+        border-color: #fff;
+        border: 2px solid #fff;
+        border-radius: 50px;
+      }
     }
   }
 
@@ -94,4 +117,118 @@ $font-family_1: 'Arial', sans-serif;
 
 .main-header.show {
   transform: translateY(0);
+}
+
+@media (max-width: 991px) {
+  .main-header {
+    background: #1bb5ae;
+    padding: 15px 12px;
+
+    .nav-links {
+      display: none;
+    }
+
+    .login-signup-btn {
+      display: none;
+    }
+
+    .sidebars {
+      display: block;
+      background: transparent;
+      position: relative;
+      width: 8%;
+
+      .menu-button {
+        outline: 0;
+        padding-right: 0;
+        border: 0;
+        background: transparent;
+
+        span {
+          position: absolute;
+          left: 0px;
+          background: #fff;
+          border-radius: 2px;
+          transition: transform 0.28s ease, opacity 0.2s ease, width 0.2s ease;
+          height: 3px;
+          width: 1.8rem;
+          top: 11px;
+        }
+
+        &.menu-button span:nth-child(1) {
+          transform: translateY(-8px);
+          width: 1.8rem;
+        }
+
+        &.menu-button span:nth-child(2) {
+          width: 18px;
+        }
+
+        &.menu-button span:nth-child(3) {
+          transform: translateY(8px);
+          width: 14px;
+        }
+
+        &.menu-button.open span:nth-child(1) {
+          transform: rotate(44deg);
+          width: 24px;
+        }
+
+        &.menu-button.open span:nth-child(2) {
+          opacity: 0;
+        }
+
+        &.menu-button.open span:nth-child(3) {
+          transform: rotate(-45deg);
+          width: 24px;
+        }
+
+        /* accessibility focus */
+        &.menu-button:focus-visible {
+          outline: 2px solid #4c9aff;
+          outline-offset: 3px;
+        }
+
+        // &.menu-button {
+        //   span+span {
+        //     margin-top: .35rem;
+        //   }
+        // }
+
+        &.menu-button span:nth-child(2) {
+          width: 1.5rem;
+        }
+
+        &.menu-button span:nth-child(3) {
+          width: 1.2rem;
+        }
+
+      }
+
+      .menu {
+        background: #fff;
+        border-radius: 2px;
+        display: block;
+        height: 100vh;
+        width: 75%;
+        transition: all .5s;
+        position: fixed;
+        left: -75%;
+        top: 0;
+
+        &.open {
+          background: #fff;
+          border-radius: 2px;
+          display: block;
+          height: 100vh;
+          width: 75%;
+          transition: all .5s;
+          position: fixed;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+
 }

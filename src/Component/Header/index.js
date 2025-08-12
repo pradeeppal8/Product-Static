@@ -1,60 +1,17 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-// import searchicon from "../../ulits/assets/search-icon.svg";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import headerLogo from "../../ulits/assets/header-logo.png";
 import Modal from "react-bootstrap/Modal";
 
 function Header() {
     const [showHeader, setShowHeader] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
     const [lastScrollY, setLastScrollY] = useState(0);
     const location = useLocation();
-    // const [showModal, setShowModal] = useState(false);
-    // const [showPassword, setShowPassword] = useState(false);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-    const [errors, setErrors] = useState({});
-    // const [showInput, setShowInput] = useState(false);
 
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-
-    //     const newErrors = {};
-
-    //     // Basic email validation
-    //     if (!email) {
-    //         newErrors.email = "Email is required";
-    //     } else if (!/\S+@\S+\.\S+/.test(email)) {
-    //         newErrors.email = "Enter a valid email";
-    //     }
-
-    //     // Basic password validation
-    //     if (!password) {
-    //         newErrors.password = "Password is required";
-    //     } else if (password.length < 6) {
-    //         newErrors.password = "Minimum 6 characters";
-    //     }
-
-    //     setErrors(newErrors);
-
-    //     if (Object.keys(newErrors).length === 0) {
-    //         // Proceed with login logic (e.g. API call)
-    //         console.log("Form Submitted");
-    //     }
-    // };
-
-    const handleSubmit = (e) => {
-        e.preventDefault(); // stop default form behavior
-        console.log('Email:', email);
-        console.log('Password:', password);
-
-        // here you can send data to backend using fetch/axios
-    };
 
 
     useEffect(() => {
@@ -73,9 +30,15 @@ function Header() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, [lastScrollY]);
+    const goToLogin = () => {
+        navigate("/login");
+    };
+    const ToggleSidebar = () => {
+        setIsOpen(!isOpen);
+    };
 
     const menuItems = [
-        { path: "/", label: "Home" },
+        { path: "/home", label: "Home" },
         { path: "/about", label: "About" },
         { path: "/portfolio", label: "Portfolio" },
         { path: "/blog", label: "Blog" },
@@ -85,7 +48,8 @@ function Header() {
 
     return (
         <>
-            <header className={`main-header ${showHeader ? "show" : "hide"}`}>
+            <header className={`main-header ${showHeader ? "show" : "hide"} ${location.pathname === "/" ? "home-header" : "other-header"
+                }`}>
                 <div className="logo">
                     <img src={headerLogo} alt="Logo" />
                 </div>
@@ -101,9 +65,53 @@ function Header() {
                         </Link>
                     ))}
                 </nav>
-                <button className="login-signup-btn" onClick={handleShow}>
+                <button
+                    className="login-signup-btn"
+                    onClick={goToLogin}
+                >
                     Log In/Sign Up
                 </button>
+                <div className="sidebars">
+                    <button
+                        className={`menu-button ${isOpen == true ? "open" : ""}`}
+                        onClick={ToggleSidebar}
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <nav className={`menu ${isOpen == true ? "open" : ""}`}>
+                        <div className="sd-header">
+                            <Link to="/">
+                                {/* <img src={headerLogo} alt="Logo" /> */}
+                            </Link>
+                            <div className="menu-close" onClick={ToggleSidebar}>
+                                {/* <img src={arrowwhite} alt="Close Menu" /> */}
+                            </div>
+                        </div>
+                        <div className="hide-desk">
+                            <div className="meno-menu">
+                                <nav className="nav-links">
+                                    {menuItems.map((item, index) => (
+                                        <Link
+                                            key={index}
+                                            to={item.path}
+                                            className={location.pathname === item.path ? "active" : ""}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    ))}
+                                </nav>
+                                <button
+                                    className="login-signup-btn"
+                                    onClick={goToLogin}
+                                >
+                                    Log In/Sign Up
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
             </header>
             <Modal show={show} onHide={handleClose} className="login-modal">
                 <Modal.Header closeButton>
@@ -141,7 +149,7 @@ function Header() {
                         <button type="submit" className="login-btn">Login</button>
                         <button type="button" className="signup-btn">Sign Up Now</button>
                     </form> */}
-                    <form onSubmit={handleSubmit}>
+                    {/* <form onSubmit={handleSubmit}>
                         <input
                             type="email"
                             placeholder="Enter Email"
@@ -159,7 +167,7 @@ function Header() {
                         />
 
                         <button type="submit">Submit</button>
-                    </form>
+                    </form> */}
 
                     <p className="forgot-link">Forgot Your password?</p>
                 </Modal.Body>

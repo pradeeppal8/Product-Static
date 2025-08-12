@@ -9,21 +9,23 @@ import { Link } from 'react-router-dom';
 
 
 function Login() {
-    // const [tab, setTab] = useState("login");
     const [email, setEmail] = useState('');
-    const [error, setError] = useState('');
+    const [errors, setErrors] = useState({});
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
 
     const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!email.trim()) {
-      setError('Email is Required');
-    } else {
-      setError('');
-      navigate('/home'); 
-    }
-  };
+        e.preventDefault();
+        if (email === "pradeep@gmail.com") {
+            navigate("/home");
+        } else {
+            alert("Invalid credentials");
+        }
+        const newErrors = {};
+        if (!email.trim()) newErrors.email = 'Email is Required';
+
+        setErrors(newErrors);
+    };
 
 
     useEffect(() => {
@@ -32,27 +34,22 @@ function Login() {
     }, []);
 
     if (loading) return <CustomLoader loading />;
-   
+
 
     return (
         <div className="main-wrapper">
             <img src={mainbanner1} alt="" />
             <div className="auth-container">
-                {/* <div className="tabs">
-                    <button className={`tab ${tab === "login" ? "active" : ""}`} onClick={() => setTab("login")}>
-                        Login
-                    </button>
-                    <button className={`tab ${tab === "signup" ? "active" : ""}`} onClick={() => setTab("signup")}>
-                        Sign Up
-                    </button>
-                </div> */}
+                <div className="login-container">
 
+                    <div className="form-container">
+                        <h2>Login Page</h2>
+                        <p>
+                            Don’t have an account? <Link to="/">Sign up now!</Link>
+                        </p>
+                    </div>
 
-                {/* <div className="login-container">
-                    <h2>Login your account</h2>
-                    <p>Inter yor valid email address and Password to login your account</p>
-
-                    <form className="login-form" onSubmit={handleLogin}>
+                    <form className="login-form" onSubmit={handleSubmit}>
                         <div className={`form-group ${errors.email ? 'has-error' : ''}`}>
                             <label>EMAIL ADDRESS</label>
                             <input
@@ -62,42 +59,6 @@ function Login() {
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                             {errors.email && <span className="error-text">{errors.email}</span>}
-                        </div>
-
-                        <div className={`form-group ${errors.password ? 'has-error' : ''}`}>
-                            <label>PASSWORD</label>
-                            <input
-                                type="password"
-                                placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                            {errors.password && <span className="error-text">{errors.password}</span>}
-                        </div>
-                        <button type="submit">LOGIN</button>
-                    </form>
-                </div> */}
-                <div className="login-container">
-
-                    <div className="form-container">
-                        <h2>Login Page</h2>
-                        {/* Login form goes here */}
-                        <p>
-                            Don’t have an account? <Link to="/">Sign up now!</Link>
-                        </p>
-                    </div>
-
-                    <form className="login-form" onSubmit={handleSubmit}>
-                        <div className={`form-group ${error.email ? 'has-error' : ''}`}>
-                            <label>EMAIL</label>
-                            <input
-                                id="email"
-                                type="email"
-                                placeholder="example@domain.com"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            {error.email && <span className="error-text">{error.email}</span>}
                         </div>
                         <button type="submit">
                             LET'S START <span>&rarr;</span>
