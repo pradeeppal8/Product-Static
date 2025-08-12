@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import headerLogo from "../../ulits/assets/header-logo.png";
 
 
 
@@ -8,7 +10,9 @@ function Footer() {
         <footer className="footer">
             <div className="footer__container">
                 <div className="footer__col brand">
-                    <h2 className="brand__logo">C<span>INTESHAPE</span></h2>
+                    <div className="brand__logo">
+                        <Link to="/"><img src={headerLogo} alt="Running Shoes" /></Link>
+                    </div>
                     <p>7X Theme is a html template for interior and architecture purpose. Today we can tell you, thanks to your passion.</p>
                     <div className="brand__social">
                         <i className="fab fa-behance"></i>

@@ -124,6 +124,23 @@ $font-family_1: 'Arial', sans-serif;
     background: #1bb5ae;
     padding: 15px 12px;
 
+    &.home-header {
+
+      .sidebars {
+        .menu {
+          background-color: #1bb5ae;
+
+          &.open {
+            background-color: #1bb5ae;
+          }
+        }
+      }
+    }
+
+    &.other-header {
+      background-color: #000;
+    }
+
     .nav-links {
       display: none;
     }
@@ -150,7 +167,7 @@ $font-family_1: 'Arial', sans-serif;
           background: #fff;
           border-radius: 2px;
           transition: transform 0.28s ease, opacity 0.2s ease, width 0.2s ease;
-          height: 3px;
+          height: 2.2px;
           width: 1.8rem;
           top: 11px;
         }
@@ -161,12 +178,12 @@ $font-family_1: 'Arial', sans-serif;
         }
 
         &.menu-button span:nth-child(2) {
-          width: 18px;
+          width: 16px;
         }
 
         &.menu-button span:nth-child(3) {
           transform: translateY(8px);
-          width: 14px;
+          width: 12px;
         }
 
         &.menu-button.open span:nth-child(1) {
@@ -206,7 +223,7 @@ $font-family_1: 'Arial', sans-serif;
       }
 
       .menu {
-        background: #fff;
+        background: #000;
         border-radius: 2px;
         display: block;
         height: 100vh;
@@ -214,10 +231,10 @@ $font-family_1: 'Arial', sans-serif;
         transition: all .5s;
         position: fixed;
         left: -75%;
-        top: 0;
+        top: 92px;
 
         &.open {
-          background: #fff;
+          background: #000;
           border-radius: 2px;
           display: block;
           height: 100vh;
@@ -225,7 +242,25 @@ $font-family_1: 'Arial', sans-serif;
           transition: all .5s;
           position: fixed;
           left: 0;
-          top: 0;
+          top: 92px;
+        }
+        .hide-desk {
+          .meno-menu {
+            .nav-links {
+             display: flex;
+             flex-direction: column;
+             gap: 20px;
+             margin: 12px;
+             a {
+              &.active {
+                &::after {
+                  transform: scaleX(1);
+                  height: 0;
+                }
+              }
+             }
+            }
+          }
         }
       }
     }

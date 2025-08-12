@@ -51,7 +51,9 @@ function Header() {
             <header className={`main-header ${showHeader ? "show" : "hide"} ${location.pathname === "/" ? "home-header" : "other-header"
                 }`}>
                 <div className="logo">
-                    <img src={headerLogo} alt="Logo" />
+                    <Link to="/">
+                        <img src={headerLogo} alt="Logo" />
+                    </Link>
                 </div>
 
                 <nav className="nav-links">
