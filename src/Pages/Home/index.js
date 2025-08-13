@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import CustomLoader from "../../Component/CustomeLoader";
 import ScrollButtons from "../../Component/ScrollButtons";
-import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/dist/react-datepicker.css";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+// import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 
 
@@ -19,6 +22,11 @@ function Home() {
         <>
             <div className="main-wrapper">
                 <div className="homepage">
+                    <Skeleton baseColor="#202020" highlightColor="#444">
+                        <p>
+                            <Skeleton count={3} />
+                        </p>
+                    </Skeleton>
                     <div className="title">About Us</div>
                     <nav className="navbar">
                         <input type="text" placeholder="Search products..." />
