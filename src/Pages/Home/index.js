@@ -1,9 +1,9 @@
-import React from "react";
+// import React from "react";
 import { useState, useEffect } from "react";
 import CustomLoader from "../../Component/CustomeLoader";
 import ScrollButtons from "../../Component/ScrollButtons";
 // import { CCol, CRow } from '@coreui/react'
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
@@ -11,7 +11,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 function Home() {
     const [loading, setLoading] = useState(true);
-    const [startDate, setStartDate] = useState(new Date());
+    // const [startDate, setStartDate] = useState(new Date());
 
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 1500);
@@ -80,13 +80,6 @@ function Home() {
                         <h2>Sports and Fitness Accessories</h2>
                         <button>Shop Now</button>
                     </section>
-
-                    <footer className="footer">
-                        <p>&copy; 2025 POCO. All rights reserved.</p>
-                    </footer>
-                </div>
-                <div className="datepicker">
-                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
                 </div>
             </div>
             <ScrollButtons />
