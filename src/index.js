@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import "./scss/style.scss";
 import "bootstrap/dist/css/bootstrap.css";
 import '@coreui/coreui-pro/dist/css/coreui.min.css';
+import {ThemeProvider} from "../src/Component/ThemeProvider";
  
 import { BrowserRouter } from "react-router-dom";
 
@@ -13,7 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+     <ThemeProvider><App/></ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

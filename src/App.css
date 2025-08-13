@@ -6,6 +6,22 @@
   height: 40vmin;
   pointer-events: none;
 }
+.App {
+  --bg: #ffffff;
+  --text: #111111;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* theme overrides via class */
+.App.light {
+  --bg: #ffffff;
+  --text: #111111;
+}
+.App.dark {
+  --bg: #0f1115;
+  --text: #e7ecf4;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

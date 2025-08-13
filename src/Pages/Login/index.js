@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import CustomLoader from "../../Component/CustomeLoader";
 import { useNavigate } from "react-router-dom";
-import mainbanner1 from "../../ulits/assets/main-banner1.png";
+import mainbanner1 from "../../ulits/assets/main-banner1.jpg";
 import { Link } from 'react-router-dom';
 
 
