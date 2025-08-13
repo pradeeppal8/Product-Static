@@ -116,7 +116,7 @@ function Header() {
                         aria-checked={isDark}
                         aria-label="Toggle color mode"
                     >
-                        <span className="label">{isDark ? "NIGHT MODE" : "DAY MODE"}</span>
+                        <span className="label">{isDark ? "DARK MODE" : "LIGHT MODE"}</span>
                         <span className="thumb" aria-hidden="true">
                             <span className="thumb-inner">{isDark ? <Moon /> : <Sun />}</span>
                         </span>

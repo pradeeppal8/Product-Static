@@ -78,7 +78,7 @@ function Signup() {
                                     right: "10px",
                                     top: "35px",
                                     cursor: "pointer",
-                                    color: "#fff",
+                                    // color: "#fff",
                                     transform: "translate(-50%, 80%)",
                                 }}
                             >

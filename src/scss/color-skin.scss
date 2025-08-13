@@ -1,0 +1,300 @@
+:root {
+    --brand: #10bfa7;
+}
+
+.light {
+
+    .color-dock {
+        // position: relative;
+
+        .dock-btn.close {
+            top: 50%;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 64px;
+            height: 64px;
+            background: #111;
+            color: #fff;
+            border: 0;
+            border-radius: 0px 0 0 0;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+            cursor: pointer;
+            z-index: 1200;
+            transition: all 0.75s;
+
+            svg {
+                animation: spin 2s linear infinite;
+            }
+
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        .dock-btn.open {
+            top: 50%;
+            position: fixed;
+            right: 19%;
+            bottom: 0;
+            width: 64px;
+            height: 64px;
+            background: #111;
+            transition: all 0.75s;
+            color: #fff;
+            border: 0;
+            border-radius: 0px 0 0 0;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+            cursor: pointer;
+            z-index: 1200;
+
+            svg {
+                animation: spin 2s linear infinite;
+            }
+
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        .dock-btn .gear {
+            width: 28px;
+            height: 28px;
+        }
+
+        .dock-panel {
+            top: 0%;
+            position: absolute;
+            right: -300px;
+            bottom: 0;
+            background: #fff;
+            color: #111;
+            width: 300px;
+            border-radius: 0px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+            padding: 18px;
+            pointer-events: none;
+            transition: all 0.75s;
+            transition: opacity 0.2s, transform 0.2s;
+            z-index: 1199;
+            height: 150px;
+
+            .swatches {
+                gap: 12px;
+                display: flex;
+
+                a {
+                    width: 80px;
+
+                    img {
+                        width: 80px;
+                    }
+                }
+            }
+        }
+
+        .dock-panel.open {
+            transition: all 0.75s;
+        }
+
+        .panel-title {
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            margin-bottom: 12px;
+        }
+
+        .swatch {
+            width: 48px;
+            height: 34px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.08);
+            transition: transform 0.12s, box-shadow 0.12s;
+        }
+
+        .swatch:hover {
+            transform: translateY(-1px);
+        }
+
+        .swatch.sel {
+            box-shadow: inset 0 0 0 3px #fff, 0 0 0 2px var(--brand);
+        }
+
+        /* Optional dark page support */
+        body.dark .dock-panel {
+            background: #101418;
+            color: #e7edf6;
+        }
+
+        body.dark .swatch.sel {
+            box-shadow: inset 0 0 0 3px #101418, 0 0 0 2px var(--brand);
+        }
+
+        /* Example usage of brand color */
+        .btn-primary {
+            background: var(--brand);
+            color: #fff;
+            border: 0;
+        }
+    }
+}
+
+.dark {
+
+    .color-dock {
+        // position: relative;
+
+        .dock-btn.close {
+            top: 50%;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 64px;
+            height: 64px;
+            background: #2d2e30;
+            color: #fff;
+            border: 0;
+            border-radius: 0px 0 0 0;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+            cursor: pointer;
+            z-index: 1200;
+            transition: all 0.75s;
+
+            svg {
+                animation: spin 2s linear infinite;
+            }
+
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        .dock-btn.open {
+            top: 50%;
+            position: fixed;
+            right: 19%;
+            bottom: 0;
+            width: 64px;
+            height: 64px;
+            background: #2d2e30;
+            transition: all 0.75s;
+            color: #fff;
+            border: 0;
+            border-radius: 0px 0 0 0;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+            cursor: pointer;
+            z-index: 1200;
+
+            svg {
+                animation: spin 2s linear infinite;
+            }
+
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        .dock-btn .gear {
+            width: 28px;
+            height: 28px;
+        }
+
+        .dock-panel {
+            top: 0%;
+            position: absolute;
+            right: -300px;
+            bottom: 0;
+            background: #fff;
+            color: #111;
+            width: 300px;
+            border-radius: 0px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+            padding: 18px;
+            pointer-events: none;
+            transition: all 0.75s;
+            transition: opacity 0.2s, transform 0.2s;
+            z-index: 1199;
+            height: 150px;
+
+            .swatches {
+                gap: 12px;
+                display: flex;
+
+                a {
+                    width: 80px;
+
+                    img {
+                        width: 80px;
+                    }
+                }
+            }
+        }
+
+        .dock-panel.open {
+            transition: all 0.75s;
+        }
+
+        .panel-title {
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            margin-bottom: 12px;
+        }
+
+
+        .swatch {
+            width: 48px;
+            height: 34px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.08);
+            transition: transform 0.12s, box-shadow 0.12s;
+        }
+
+        .swatch:hover {
+            transform: translateY(-1px);
+        }
+
+        .swatch.sel {
+            box-shadow: inset 0 0 0 3px #fff, 0 0 0 2px var(--brand);
+        }
+
+        /* Optional dark page support */
+        body.dark .dock-panel {
+            background: #101418;
+            color: #e7edf6;
+        }
+
+        body.dark .swatch.sel {
+            box-shadow: inset 0 0 0 3px #101418, 0 0 0 2px var(--brand);
+        }
+
+        /* Example usage of brand color */
+        .btn-primary {
+            background: var(--brand);
+            color: #fff;
+            border: 0;
+        }
+    }
+}
+
+
+
+@media (max-width: 991px) {
+    .dark .color-dock .dock-btn.open {
+        right: 76%;
+    }
+
+    .light .color-dock .dock-btn.open {
+        right: 76%;
+    }
+}

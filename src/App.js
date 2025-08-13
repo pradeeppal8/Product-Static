@@ -13,12 +13,14 @@ import "./scss/style.scss";
 import "bootstrap/dist/css/bootstrap.css";
 import "@coreui/coreui-pro/dist/css/coreui.min.css";
 import { useTheme } from "./Component/ThemeProvider";
+import ColorSkin from "./Component/ColorSkin";
 
 function App() {
   const { theme } = useTheme();
   return (
     <div className={`App ${theme}`}>
       <Header />
+      <ColorSkin />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Signup />} />
