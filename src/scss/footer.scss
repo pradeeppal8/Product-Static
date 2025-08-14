@@ -13,9 +13,26 @@
             }
           }
         }
+
         .brand__social {
-          i {
+          a {
             background-color: $color_1;
+
+            .fab_facebook {
+              background-color: $color_2;
+            }
+
+            .fab_instagram {
+              background-color: $color_2;
+            }
+
+            .fab_linkedin {
+              background-color: $color_2;
+            }
+
+            .fab_twitter {
+              background-color: $color_2;
+            }
           }
         }
       }
@@ -52,6 +69,16 @@
         color: #111 !important;
       }
 
+      .subscribe__form {
+        button {
+          background-color: $color_1;
+
+          .fas_telegram {
+            background-color: $color_2;
+          }
+        }
+      }
+
       p {
         color: #494949;
       }
@@ -65,6 +92,7 @@
   padding: 30px 0 30px !important;
   font-family: "Segoe UI", sans-serif;
   margin-top: 0;
+  border-top: 0 !important;
 
   a {
     color: #fff;
@@ -111,7 +139,7 @@
         display: flex;
         gap: 15px;
 
-        i {
+        a {
           background: #fff;
           color: #111;
           font-size: 16px;
@@ -124,9 +152,81 @@
           cursor: pointer;
           transition: all 0.3s ease;
 
+          .fab_facebook {
+            background-color: #111;
+            -webkit-mask-image: url(../ulits/assets/facebook.svg);
+            mask-image: url(../ulits/assets/facebook.svg);
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 18px;
+            background-position: center;
+            object-fit: contain;
+            transition: all 0.75s ease;
+            mask-size: 18px 18px;
+          }
+
+          .fab_twitter {
+            background-color: #111;
+            -webkit-mask-image: url(../ulits/assets/xcode.svg);
+            mask-image: url(../ulits/assets/xcode.svg);
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 18px;
+            background-position: center;
+            object-fit: contain;
+            transition: all 0.75s ease;
+            mask-size: 18px 18px;
+          }
+
+          .fab_instagram {
+            background-color: #111;
+            -webkit-mask-image: url(../ulits/assets/instagram.svg);
+            mask-image: url(../ulits/assets/instagram.svg);
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 18px;
+            background-position: center;
+            object-fit: contain;
+            transition: all 0.75s ease;
+            mask-size: 18px 18px;
+          }
+
+          .fab_linkedin {
+            background-color: #111;
+            -webkit-mask-image: url(../ulits/assets/linkedin.svg);
+            mask-image: url(../ulits/assets/linkedin.svg);
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 18px;
+            background-position: center;
+            object-fit: contain;
+            transition: all 0.75s ease;
+            mask-size: 18px 18px;
+          }
+
           &:hover {
             background: #c78c65;
             color: #fff;
+
+            .fab_facebook {
+              background-color: #fff;
+              transition: all 0.75s ease;
+            }
+
+            .fab_twitter {
+              background-color: #fff;
+              transition: all 0.75s ease;
+            }
+
+            .fab_instagram {
+              background-color: #fff;
+              transition: all 0.75s ease;
+            }
+
+            .fab_linkedin {
+              background-color: #fff;
+              transition: all 0.75s ease;
+            }
           }
         }
       }
@@ -141,9 +241,10 @@
       ul {
         list-style: none;
         padding: 0;
-            margin-bottom: 0;
+        margin-bottom: 0;
 
         li {
+
           // display: flex;
           // align-items: flex-start;
           // margin-bottom: 20px;
@@ -246,22 +347,30 @@
       button {
         background: #fff;
         border: none;
-        padding: 0 20px;
+        padding: 0 13px;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
 
-        i {
-          color: #000;
-          font-size: 16px;
+        .fas_telegram {
+          background-color: #111;
+          -webkit-mask-image: url(../ulits/assets/telegram.png);
+          mask-image: url(../ulits/assets/telegram.png);
+          background-repeat: no-repeat;
+          width: 18px;
+          height: 18px;
+          background-position: center;
+          object-fit: contain;
+          transition: all 0.75s ease;
+          mask-size: 18px 18px;
         }
 
         &:hover {
           background: #c78c65;
 
-          i {
-            color: #fff;
+          .fas_telegram {
+            background-color: #fff;
           }
         }
       }
@@ -318,20 +427,36 @@
       }
 
       button {
-        margin-top: 10px;
+        margin-top: 0px;
+        padding: 10px 0;
       }
     }
   }
 }
 
+@media (max-width: 991px) {
+  .footer .footer__container {
+    padding: 15px 12px;
+  }
+  .footer .footer__bottom {
+    margin-top: 8px;
+    padding: 0 12px;
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
 @media (max-width: 768px) {
+
   // .footer .footer__subscribe {
   //   text-align: center;
   // }
   .footer .footer__bottom {
     text-align: center;
     width: 100%;
-            margin-top: 11px;
+    margin-top: 11px;
+
     p {
       margin-bottom: 0;
     }

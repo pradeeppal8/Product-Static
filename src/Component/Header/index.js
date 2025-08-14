@@ -30,7 +30,7 @@ const Moon = () => (
 function Header() {
     const [showHeader, setShowHeader] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
-    const { theme, toggle } = useTheme();
+    const { theme } = useTheme();
     const navigate = useNavigate();
     const [lastScrollY, setLastScrollY] = useState(0);
     const location = useLocation();
@@ -123,6 +123,18 @@ function Header() {
                     </button>
                 </div>
                 <div className="sidebars">
+                    <button
+                        className={`toggle ${isDark ? "dark" : "light"}`}
+                        onClick={() => setMode(isDark ? "light" : "dark")}
+                        role="switch"
+                        aria-checked={isDark}
+                        aria-label="Toggle color mode"
+                    >
+                        <span className="label">{isDark ? "DARK MODE" : "LIGHT MODE"}</span>
+                        <span className="thumb" aria-hidden="true">
+                            <span className="thumb-inner">{isDark ? <Moon /> : <Sun />}</span>
+                        </span>
+                    </button>
                     <button
                         className={`menu-button ${isOpen == true ? "open" : ""}`}
                         onClick={ToggleSidebar}

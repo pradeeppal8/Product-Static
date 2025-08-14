@@ -63,8 +63,8 @@ export default function ColorSkin() {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            width="35"
-            height="35"
+            width="25"
+            height="25"
             fill="currentColor"
             aria-hidden="true"
           >
@@ -78,10 +78,25 @@ export default function ColorSkin() {
           >
             <div className="swatches">
               <Link to="https://www.facebook.com">
-                <img src={facebook} alt="facebook" />
+                <div className="fab_facebook"></div>
+              </Link>
+              <Link to="https://www.twitter.com">
+                <div className="fab_twitter"></div>
+              </Link>
+              <Link to="https://www.linkedin.com">
+                <div className="fab_linkedin"></div>
               </Link>
               <Link to="https://www.instagram.com">
-                <img src={instagram} alt="instagram" />
+                <div className="fab_instagram"></div>
+              </Link>
+              <Link to="https://www.whatsapp.com">
+                <div className="fab_whatsapp"></div>
+              </Link>
+              <Link to="https://www.copylink.com">
+                <div className="fab_copylink"></div>
+              </Link>
+              <Link to="https://www.sharethis.com">
+                <div className="fab_sharethis"></div>
               </Link>
             </div>
           </div>

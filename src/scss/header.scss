@@ -262,8 +262,8 @@ $font-family_1: "Arial", sans-serif;
 
 
     .toggle.dark {
-      background: #29323e;
-      border-color: #29323e;
+      background: #2a2b2d;
+      border-color: #2a2b2d;
       color: #fff;
     }
 
@@ -310,7 +310,7 @@ $font-family_1: "Arial", sans-serif;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 15px 40px;
+  padding: 15px 30px;
   border-bottom: 0px solid #eee;
   font-family: $font-family_1;
   display: flex;
@@ -326,6 +326,10 @@ $font-family_1: "Arial", sans-serif;
 
   .sidebars {
     display: none;
+
+    .toggle {
+      display: none;
+    }
   }
 
   .logo {
@@ -463,17 +467,28 @@ $font-family_1: "Arial", sans-serif;
       display: none;
     }
 
+    .dark-mode {
+      .toggle {
+        display: none;
+      }
+    }
+
     .sidebars {
-      display: block;
+      display: flex;
       background: transparent;
       position: relative;
-      width: 8%;
+      text-align: end;
+      margin: 0 0 0 auto;
+      justify-content: end;
 
       .menu-button {
         outline: 0;
         padding-right: 0;
         border: 0;
         background: transparent;
+        width: 30px;
+        position: absolute;
+        top: 10px;
 
         span {
           position: absolute;
@@ -559,6 +574,8 @@ $font-family_1: "Arial", sans-serif;
               flex-direction: column;
               gap: 20px;
               margin: 12px;
+              justify-content: flex-start;
+              text-align: left;
 
               a {
                 &.active {
@@ -572,16 +589,27 @@ $font-family_1: "Arial", sans-serif;
           }
         }
       }
+
+      .toggle {
+        display: block;
+        margin-right: 44px;
+      }
     }
   }
 
-  .dark .main-header .toggle {
-    position: absolute;
-    right: 97px;
+  .light .main-header .toggle.light .label {
+    margin-left: -15px;
   }
 
-  .light .main-header .toggle {
-    position: absolute;
-    right: 97px;
-  }
+  // .dark .main-header .toggle {
+  //   left: 64%;
+  //   position: absolute;
+
+  // }
+
+  // .light .main-header .toggle {
+  //   left: 64%;
+  //   position: absolute;
+
+  // }
 }

@@ -17,13 +17,20 @@ function Footer() {
             Today we can tell you, thanks to your passion.
           </p>
           <div className="brand__social">
-            <i className="fab fa-behance"></i>
-            <i className="fab fa-facebook-f"></i>
-            <i className="fab fa-twitter"></i>
-            <i className="fab fa-instagram"></i>
+            <Link to="https://www.facebook.com">
+              <div className="fab_facebook"></div>
+            </Link>
+            <Link to="https://www.twitter.com">
+              <div className="fab_twitter"></div>
+            </Link>
+            <Link to="https://www.instagram.com">
+              <div className="fab_instagram"></div>
+            </Link>
+            <Link to="https://www.linkedin.com">
+              <div className="fab_linkedin"></div>
+            </Link>
           </div>
         </div>
-
         <div className="footer__col posts">
           <h4>Resent Post</h4>
           <ul>
@@ -68,7 +75,7 @@ function Footer() {
           <div className="subscribe__form">
             <input type="email" placeholder="ENTER YOUR EMAIL" />
             <button>
-              <i className="fas fa-paper-plane"></i>
+              <div className="fas_telegram"></div>
             </button>
           </div>
         </div>

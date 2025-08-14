@@ -78,10 +78,6 @@ function About() {
                         <h2>Sports and Fitness Accessories</h2>
                         <button>Shop Now</button>
                     </section>
-
-                    <footer className="footer">
-                        <p>&copy; 2025 POCO. All rights reserved.</p>
-                    </footer>
                 </div>
             </div>
             <ScrollButtons />
