@@ -40,6 +40,12 @@
                                 opacity: 0;
                             }
                         }
+
+                        input:-internal-autofill-selected {
+                            -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+                            -webkit-text-fill-color: inherit !important;
+                            transition: background-color 5000s ease-in-out 0s;
+                        }
                     }
 
                     button {
@@ -72,8 +78,10 @@
                     h2 {
                         color: $color_1;
                     }
+
                     p {
                         color: $color_1;
+
                         a {
                             color: #a2a2a2;
 
@@ -87,8 +95,9 @@
                 .login-form {
                     .form-group {
                         label {
-                          color: $color_1;
+                            color: $color_1;
                         }
+
                         span {
                             color: $color_2;
                         }

@@ -456,3 +456,30 @@
         left: 62%;
     }
 }
+@media (max-device-width: 430px) {
+    .dark .color-dock .dock-btn.open {
+        left: 72%;
+    }
+
+    .light .color-dock .dock-btn.open {
+        left: 72%;
+    }
+}
+@media (max-device-width: 390px) {
+    .dark .color-dock .dock-btn.open {
+        left: 75%;
+    }
+
+    .light .color-dock .dock-btn.open {
+        left: 75%;
+    }
+}
+@media (max-device-width: 360px) {
+    .dark .color-dock .dock-btn.open {
+        left: 82%;
+    }
+
+    .light .color-dock .dock-btn.open {
+        left: 82%;
+    }
+}
