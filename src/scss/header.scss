@@ -9,12 +9,6 @@ $font-family_1: "Arial", sans-serif;
     .nav-links {
       a {
         color: $color_1;
-<<<<<<< Updated upstream
-        &.active {
-           &::after {
-             background-color: $color_1;
-           }
-=======
 
         &:hover {
           color: #d7b39a;
@@ -34,7 +28,6 @@ $font-family_1: "Arial", sans-serif;
           &::after {
             background-color: $color_1;
           }
->>>>>>> Stashed changes
         }
       }
     }

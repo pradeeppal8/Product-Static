@@ -4,18 +4,12 @@ import ScrollButtons from "../../Component/ScrollButtons";
 // import Skeleton from "react-loading-skeleton";
 // import "react-loading-skeleton/dist/skeleton.css";
 // import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-<<<<<<< Updated upstream
-import DatePicker from "react-datepicker";
-import { format } from "date-fns";
-import "react-datepicker/dist/react-datepicker.css";
-=======
 import mainbanner2 from "../../ulits/assets/main-banner2.jpg";
 import bg5 from "../../ulits/assets/bg5.jpg";
 import pic1 from "../../ulits/assets/pic1.jpg";
 import pic2 from "../../ulits/assets/pic2.jpg";
 import pic3 from "../../ulits/assets/pic3.jpg";
 
->>>>>>> Stashed changes
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -44,11 +38,7 @@ function Home() {
     <>
       <div className="main-wrapper">
         <div className="homepage">
-<<<<<<< Updated upstream
-          {loading ? (
-=======
           {/* {loading ? (
->>>>>>> Stashed changes
             <Skeleton width={308} height={50} borderRadius={8} baseColor="#ebebeb"
               highlightColor="#f5f5f5" />
           ) : (
@@ -64,45 +54,12 @@ function Home() {
             />
           ) : (
             <div className="title">About Us</div>
-<<<<<<< Updated upstream
-          )}
-          <nav className="navbar">
-            <input type="text" placeholder="Search products..." />
-            <div>
-              <button>Cart</button>
-              <button>Login</button>
-            </div>
-          </nav>
-          <div className="date-wrap">
-            <DatePicker
-              selected={value}
-              onChange={setValue}
-              placeholderText="Pick a date"
-              renderDayContents={(dayOfMonth, date) => (
-                <span
-                  onMouseEnter={() => setHoverDate(date)}
-                  onMouseLeave={() => setHoverDate(null)}
-                  title={format(date, "EEE, dd MMM yyyy")}
-                >
-                  {dayOfMonth}
-                </span>
-              )}
-              shouldCloseOnSelect
-            />
-            {hoverDate && (
-              <div className="hover-chip">
-                {format(hoverDate, "EEE, MMM d, yyyy")}
-              </div>
-            )}
-          </div>
-=======
           )} */}
           <div className="page-content">
             <div className="sx-bnr-inr overlay-wraper bg-parallax bg-top-center">
               <div className="overlay-main bg-black opacity-07">
                 <img src={mainbanner2} alt="" />
               </div>
->>>>>>> Stashed changes
 
               <div className="sx-bnr-inr-entry">
                 <div className="banner-title-outer">
