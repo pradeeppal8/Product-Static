@@ -1,12 +1,21 @@
 import { useState, useEffect } from "react";
-// import CustomLoader from "../../Component/CustomeLoader";
+import CustomLoader from "../../Component/CustomeLoader";
 import ScrollButtons from "../../Component/ScrollButtons";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+// import Skeleton from "react-loading-skeleton";
+// import "react-loading-skeleton/dist/skeleton.css";
 // import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+<<<<<<< Updated upstream
 import DatePicker from "react-datepicker";
 import { format } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
+=======
+import mainbanner2 from "../../ulits/assets/main-banner2.jpg";
+import bg5 from "../../ulits/assets/bg5.jpg";
+import pic1 from "../../ulits/assets/pic1.jpg";
+import pic2 from "../../ulits/assets/pic2.jpg";
+import pic3 from "../../ulits/assets/pic3.jpg";
+
+>>>>>>> Stashed changes
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -30,12 +39,16 @@ function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  // if (loading) return <CustomLoader loading />;
+  if (loading) return <CustomLoader loading />;
   return (
     <>
       <div className="main-wrapper">
         <div className="homepage">
+<<<<<<< Updated upstream
           {loading ? (
+=======
+          {/* {loading ? (
+>>>>>>> Stashed changes
             <Skeleton width={308} height={50} borderRadius={8} baseColor="#ebebeb"
               highlightColor="#f5f5f5" />
           ) : (
@@ -51,6 +64,7 @@ function Home() {
             />
           ) : (
             <div className="title">About Us</div>
+<<<<<<< Updated upstream
           )}
           <nav className="navbar">
             <input type="text" placeholder="Search products..." />
@@ -81,74 +95,109 @@ function Home() {
               </div>
             )}
           </div>
+=======
+          )} */}
+          <div className="page-content">
+            <div className="sx-bnr-inr overlay-wraper bg-parallax bg-top-center">
+              <div className="overlay-main bg-black opacity-07">
+                <img src={mainbanner2} alt="" />
+              </div>
+>>>>>>> Stashed changes
 
-          <section className="hero">
-            <img
-              src="https://via.placeholder.com/400x200?text=Running+Shoes"
-              alt="Running Shoes"
-            />
-            <img
-              src="https://via.placeholder.com/400x200?text=Mountain+Cycle"
-              alt="Mountain Cycle"
-            />
-          </section>
-
-          <section className="features">
-            <div>Free Shipping</div>
-            <div>Easy Returns</div>
-            <div>Secure Payment</div>
-          </section>
-
-          <section className="categories">
-            <h2>Featured Categories</h2>
-            <div className="items">
-              <div>
-                <img src="https://via.placeholder.com/60" alt="Cycle" />
-              </div>
-              <div>
-                <img src="https://via.placeholder.com/60" alt="Luggage" />
-              </div>
-              <div>
-                <img src="https://via.placeholder.com/60" alt="Shoes" />
-              </div>
-              <div>
-                <img src="https://via.placeholder.com/60" alt="Camping" />
-              </div>
-              <div>
-                <img src="https://via.placeholder.com/60" alt="Fitness" />
+              <div className="sx-bnr-inr-entry">
+                <div className="banner-title-outer">
+                  <div className="banner-title-name">
+                    <h2 className="m-tb0">home Company</h2>                                <p>
+                      The essence of interior design will always be about people and how they live. It is
+                      about the realities of what makes for an attractive, civilized.
+                    </p>
+                  </div>
+                  <div>
+                    <ul className="sx-breadcrumb breadcrumb-style-2">
+                      <li><a href="/">Home</a></li>
+                      <li>/ About Us</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
-          </section>
+            <div className="section-full mobile-page-padding">
+              <div className="section-content">
+                <div className="row">
+                  <div className="col-xl-5 col-lg-5 col-md-12 ">
+                    <div className="home-2-about bg-bottom-left">
+                      <img src={bg5} alt="" />
+                    </div>
+                  </div>
 
-          <section className="sale-banner">
-            <img
-              src="https://via.placeholder.com/300x150?text=70%25+Off+Offer"
-              alt="Sale"
-            />
-          </section>
+                  <div className="col-xl-7 col-lg-7 col-md-12">
+                    <div className="about-home-2">
+                      <h3 className="m-t0 sx-tilte">Our floors are designed to <br></br> last a lifetime</h3>
+                      <p>Since 1999, we have been providing great flooring solutions and customer service for homeowners and commercial clients.
+                        among flooring materials, none is more elegant and luxurious than natural stone.</p>
+                      <div className="text-left">
+                        <a href="javascript:;" className="site-button-link">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section-full-what">
+              <div class="section-head">
+                <div class="sx-separator-outer separator-left">
+                  <div class="sx-separator">
+                    <h3 class="sep-line-one">What We do</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="section-content">
+                <div class="row number-block-one-outer justify-content-center">
+                  <div class="col-lg-4 col-md-6 col-sm-6 m-b30">
 
-          <section className="products">
-            <div className="product">
-              <img src="https://via.placeholder.com/100" alt="Shoe" />
-              <h4>Shoe</h4>
-              <p>$29.99</p>
-            </div>
-            <div className="product">
-              <img src="https://via.placeholder.com/100" alt="Bag" />
-              <h4>Bag</h4>
-              <p>$39.99</p>
-            </div>
-            <div className="product">
-              <img src="https://via.placeholder.com/100" alt="Fitness Band" />
-              <h4>Fitness Band</h4>
-              <p>$49.99</p>
-            </div>
-          </section>
+                    <div class="number-block-one animate-in-to-top">
+                      <img src={pic1} alt="" />
+                      <div class="figcaption bg-white text-center p-a20">
+                        <h4 class="m-a0">Interior Design</h4>
+                      </div>
+                      <div class="figcaption-number text-center sx-text-primary animate-in-to-top-content">
+                        <span>01</span>
+                      </div>
+                    </div>
 
-          <section className="shop-banner">
-            <h2>Sports and Fitness Accessories</h2>
-            <button>Shop Now</button>
-          </section>
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 col-sm-6 m-b30">
+
+                    <div class="number-block-one animate-in-to-top">
+                      <img src={pic2} alt="" />
+                      <div class="figcaption bg-white text-center p-a20">
+                        <h4 class="m-a0">Architectur</h4>
+                      </div>
+                      <div class="figcaption-number text-center sx-text-primary animate-in-to-top-content">
+                        <span>02</span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 col-sm-6 m-b30">
+                    <div class="number-block-one animate-in-to-top">
+                      <img src={pic3} alt="" />
+                      <div class="figcaption bg-white text-center p-a20">
+                        <h4 class="m-a0">Floor Plan</h4>
+                      </div>
+                      <div class="figcaption-number text-center sx-text-primary animate-in-to-top-content">
+                        <span>03</span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <ScrollButtons />

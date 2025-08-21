@@ -42,7 +42,7 @@
                         }
 
                         input:-internal-autofill-selected {
-                            -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+                            -webkit-box-shadow: 0 0 0px 1000px $color_2 inset !important;
                             -webkit-text-fill-color: inherit !important;
                             transition: background-color 5000s ease-in-out 0s;
                         }
@@ -99,9 +99,13 @@
                         }
 
                         span {
+<<<<<<< Updated upstream
                             svg {
                                 fill: $color_2;
                             }
+=======
+                            color: $color_1;
+>>>>>>> Stashed changes
                         }
 
                         input[type='email'],
@@ -113,10 +117,10 @@
                             border-radius: 4px;
                             outline: none;
                             background-color: $color_1;
-                            color: $color_2;
+                            color: $color_2 !important;
 
                             &::placeholder {
-                                color: $color_2;
+                                color: $color_2 !important;
                                 opacity: 1;
                                 transition: opacity 0.3s ease;
                             }
@@ -124,6 +128,11 @@
                             &:focus::placeholder {
                                 opacity: 0;
                             }
+                        }
+                        input:-internal-autofill-selected {
+                            -webkit-box-shadow: 0 0 0px 1000px $color_2 inset !important;
+                            -webkit-text-fill-color: inherit !important;
+                            transition: background-color 5000s ease-in-out 0s;
                         }
                     }
 

@@ -9,10 +9,32 @@ $font-family_1: "Arial", sans-serif;
     .nav-links {
       a {
         color: $color_1;
+<<<<<<< Updated upstream
         &.active {
            &::after {
              background-color: $color_1;
            }
+=======
+
+        &:hover {
+          color: #d7b39a;
+
+          &::after {
+            background-color: #d7b39a;
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            height: 2px;
+            width: 100%;
+          }
+        }
+
+        &.active {
+          &::after {
+            background-color: $color_1;
+          }
+>>>>>>> Stashed changes
         }
       }
     }
@@ -172,6 +194,34 @@ $font-family_1: "Arial", sans-serif;
 .dark {
   .main-header {
     background-color: $color_1;
+
+    .nav-links {
+      a {
+        color: $color_2;
+
+        &:hover {
+          color: #d7b39a;
+
+          &::after {
+            background-color: #d7b39a;
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            height: 2px;
+            width: 100%;
+          }
+        }
+
+        &.active {
+          color: #d7b39a;
+
+          &::after {
+            background-color: #d7b39a;
+          }
+        }
+      }
+    }
 
     .login-signup-btn {
       background-color: $color_2;
@@ -590,6 +640,30 @@ $font-family_1: "Arial", sans-serif;
                   &::after {
                     transform: scaleX(1);
                     height: 0;
+                  }
+                }
+
+                &:hover {
+                  color: #d7b39a;
+                  -webkit-animation: focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                  animation: focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                  &::after {
+                    background-color: transparent;
+                  }
+                }
+
+                @keyframes focus-in-contract {
+                  0% {
+                    letter-spacing: 1em;
+                    -webkit-filter: blur(12px);
+                    filter: blur(12px);
+                    opacity: 0;
+                  }
+
+                  100% {
+                    -webkit-filter: blur(0px);
+                    filter: blur(0px);
+                    opacity: 1;
                   }
                 }
               }
