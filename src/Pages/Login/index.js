@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import CustomLoader from "../../Component/CustomeLoader";
+import { useState, } from "react";
+// import CustomLoader from "../../Component/CustomeLoader";
 import { useNavigate } from "react-router-dom";
 import mainbanner1 from "../../ulits/assets/main-banner1.jpg";
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ function Login() {
     const [email, setEmail] = useState('');
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,12 +28,12 @@ function Login() {
     };
 
 
-    useEffect(() => {
-        const timer = setTimeout(() => setLoading(false), 1500);
-        return () => clearTimeout(timer);
-    }, []);
+    // useEffect(() => {
+    //     const timer = setTimeout(() => setLoading(false), 1500);
+    //     return () => clearTimeout(timer);
+    // }, []);
 
-    if (loading) return <CustomLoader loading />;
+    // if (loading) return <CustomLoader loading />;
 
 
     return (
