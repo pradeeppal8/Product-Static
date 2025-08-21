@@ -38,7 +38,7 @@ function Login() {
 
     return (
         <div className="main-wrapper">
-            <img src={mainbanner1} alt="" />
+            <img src={mainbanner1} alt="" className="login-banner" />
             <div className="auth-container">
                 <div className="login-container">
 

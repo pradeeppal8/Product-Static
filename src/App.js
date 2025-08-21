@@ -8,24 +8,26 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import Blog from "./Pages/Blog";
 // import ProtectedRoute from "./ProtectedRoute";
 import "./scss/style.scss";
 import "bootstrap/dist/css/bootstrap.css";
 import "@coreui/coreui-pro/dist/css/coreui.min.css";
 import { useTheme } from "./Component/ThemeProvider";
-import ColorSkin from "./Component/ColorSkin";
+// import ColorSkin from "./Component/ColorSkin";
 
 function App() {
   const { theme } = useTheme();
   return (
     <div className={`App ${theme}`}>
       <Header />
-      <ColorSkin />
+      {/* <ColorSkin /> */}
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Signup />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
         {/* <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>}/> */}
       </Routes>
       <Footer />

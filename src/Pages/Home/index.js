@@ -4,9 +4,24 @@ import ScrollButtons from "../../Component/ScrollButtons";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 // import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import DatePicker from "react-datepicker";
+import { format } from "date-fns";
+import "react-datepicker/dist/react-datepicker.css";
 
 function Home() {
   const [loading, setLoading] = useState(true);
+  const [value, setValue] = useState(null);
+  const [hoverDate, setHoverDate] = useState(null);
+  // const [isHovering, setIsHovering] = useState(false);
+
+
+  // const handleMouseEnter = () => {
+  //   setIsHovering(true);
+  // };
+
+  // const handleMouseLeave = () => {
+  //   setIsHovering(false);
+  // };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -21,8 +36,8 @@ function Home() {
       <div className="main-wrapper">
         <div className="homepage">
           {loading ? (
-            <Skeleton width={308} height={50} borderRadius={8}  baseColor="#ebebeb"
-              highlightColor="#f5f5f5"/>
+            <Skeleton width={308} height={50} borderRadius={8} baseColor="#ebebeb"
+              highlightColor="#f5f5f5" />
           ) : (
             <button className="primary-btn sm mt-0">Reserve a table</button>
           )}
@@ -44,6 +59,28 @@ function Home() {
               <button>Login</button>
             </div>
           </nav>
+          <div className="date-wrap">
+            <DatePicker
+              selected={value}
+              onChange={setValue}
+              placeholderText="Pick a date"
+              renderDayContents={(dayOfMonth, date) => (
+                <span
+                  onMouseEnter={() => setHoverDate(date)}
+                  onMouseLeave={() => setHoverDate(null)}
+                  title={format(date, "EEE, dd MMM yyyy")}
+                >
+                  {dayOfMonth}
+                </span>
+              )}
+              shouldCloseOnSelect
+            />
+            {hoverDate && (
+              <div className="hover-chip">
+                {format(hoverDate, "EEE, MMM d, yyyy")}
+              </div>
+            )}
+          </div>
 
           <section className="hero">
             <img

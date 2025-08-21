@@ -30,7 +30,9 @@ const Moon = () => (
 function Header() {
     const [showHeader, setShowHeader] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
-    const { theme } = useTheme();
+    const [email, setEmail] = useState('');
+    const [errors, setErrors] = useState({});
+    // const { theme } = useTheme();
     const navigate = useNavigate();
     const [lastScrollY, setLastScrollY] = useState(0);
     const location = useLocation();
@@ -60,6 +62,19 @@ function Header() {
     }, [lastScrollY]);
     const goToLogin = () => {
         navigate("/login");
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (email === "pradeep@gmail.com") {
+            navigate("/home");
+        } else {
+            alert("Invalid credentials");
+        }
+        const newErrors = {};
+        if (!email.trim()) newErrors.email = 'Email is Required';
+
+        setErrors(newErrors);
     };
     const ToggleSidebar = () => {
         setIsOpen(!isOpen);
@@ -106,6 +121,7 @@ function Header() {
                     <button
                         className="login-signup-btn"
                         onClick={goToLogin}
+                        // onClick={() => setShow(true)}
                     >
                         Log In/Sign Up
                     </button>
@@ -178,60 +194,33 @@ function Header() {
             </header>
             <Modal show={show} onHide={handleClose} className="login-modal">
                 <Modal.Header closeButton>
-                    <Modal.Title>Log In</Modal.Title>
+                    {/* <Modal.Title>Log In</Modal.Title> */}
                 </Modal.Header>
                 <Modal.Body>
-                    {/* <form className="login-form" onSubmit={handleSubmit}>
-                        <div className="input-group">
-                            <input
-                                type="email"
-                                placeholder="Email Address"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            {errors.email && <p className="error-text">{errors.email}</p>}
+                    <div className="login-container">
+                        <div className="form-container">
+                            <h2>Login Page</h2>
+                            <p>
+                                Don’t have an account? <Link to="/">Sign up now!</Link>
+                            </p>
                         </div>
 
-                        <div className="input-group password-group">
-                            <input
-                                type={showPassword ? "text" : "password"}
-                                placeholder="Password"
-                                required
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                            <span
-                                className="toggle-password"
-                                onClick={() => setShowPassword((prev) => !prev)}
-                            >
-                                {showPassword ? "🙈" : "👁️"}
-                            </span>
-                            {errors.password && <p className="error-text">{errors.password}</p>}
-                        </div>
-
-                        <button type="submit" className="login-btn">Login</button>
-                        <button type="button" className="signup-btn">Sign Up Now</button>
-                    </form> */}
-                    {/* <form onSubmit={handleSubmit}>
-                        <input
-                            type="email"
-                            placeholder="Enter Email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-
-                        <input
-                            type="password"
-                            placeholder="Enter Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-
-                        <button type="submit">Submit</button>
-                    </form> */}
-
+                        <form className="login-form" onSubmit={handleSubmit}>
+                            <div className={`form-group ${errors.email ? 'has-error' : ''}`}>
+                                <label>EMAIL ADDRESS</label>
+                                <input
+                                    type="email"
+                                    placeholder="example@domain.com"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                {errors.email && <span className="error-text">{errors.email}</span>}
+                            </div>
+                            <button type="submit">
+                                LET'S START <span>&rarr;</span>
+                            </button>
+                        </form>
+                    </div>
                     <p className="forgot-link">Forgot Your password?</p>
                 </Modal.Body>
             </Modal>

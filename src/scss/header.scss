@@ -9,6 +9,11 @@ $font-family_1: "Arial", sans-serif;
     .nav-links {
       a {
         color: $color_1;
+        &.active {
+           &::after {
+             background-color: $color_1;
+           }
+        }
       }
     }
 
@@ -51,6 +56,9 @@ $font-family_1: "Arial", sans-serif;
             .nav-links {
               a {
                 color: $color_1;
+                &::after {
+                  background-color: $color_1;
+                }
               }
             }
           }
@@ -612,4 +620,23 @@ $font-family_1: "Arial", sans-serif;
   //   position: absolute;
 
   // }
+}
+
+@media (max-device-width: 320px) {
+  .main-header {
+    .logo {
+      img {
+        width: 105px;
+      }
+    }
+
+    .sidebars {
+      .menu {
+        top: 73px;
+        &.open {
+          top: 73px;
+        }
+      }
+    }
+  }
 }

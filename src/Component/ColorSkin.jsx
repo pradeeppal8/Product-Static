@@ -76,28 +76,30 @@ export default function ColorSkin() {
             role="dialog"
             aria-label="Pick color"
           >
-            <div className="swatches">
-              <Link to="https://www.facebook.com">
-                <div className="fab_facebook"></div>
-              </Link>
-              <Link to="https://www.twitter.com">
-                <div className="fab_twitter"></div>
-              </Link>
-              <Link to="https://www.linkedin.com">
-                <div className="fab_linkedin"></div>
-              </Link>
-              <Link to="https://www.instagram.com">
-                <div className="fab_instagram"></div>
-              </Link>
-              <Link to="https://www.whatsapp.com">
-                <div className="fab_whatsapp"></div>
-              </Link>
-              <Link to="https://www.copylink.com">
-                <div className="fab_copylink"></div>
-              </Link>
-              <Link to="https://www.sharethis.com">
-                <div className="fab_sharethis"></div>
-              </Link>
+            <div className="bg_color">
+              <div className="swatches">
+                <Link to="https://www.facebook.com">
+                  <div className="fab_facebook"></div>
+                </Link>
+                <Link to="https://www.twitter.com">
+                  <div className="fab_twitter"></div>
+                </Link>
+                <Link to="https://www.linkedin.com">
+                  <div className="fab_linkedin"></div>
+                </Link>
+                <Link to="https://www.instagram.com">
+                  <div className="fab_instagram"></div>
+                </Link>
+                <Link to="https://www.whatsapp.com">
+                  <div className="fab_whatsapp"></div>
+                </Link>
+                <Link to="https://www.copylink.com">
+                  <div className="fab_copylink"></div>
+                </Link>
+                <Link to="https://www.sharethis.com">
+                  <div className="fab_sharethis"></div>
+                </Link>
+              </div>
             </div>
           </div>
         </button>
